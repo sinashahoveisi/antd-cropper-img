@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "projects/*"
+  ],
+  "npmClient": "npm",
+  "useWorkspaces": true,
+  "version": "independent",
+  "publishConfig": {
+    "directory": "dist"
+  }
+}
