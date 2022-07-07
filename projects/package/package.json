@@ -1,13 +1,16 @@
 {
   "name": "antd-cropper-img",
-  "version": "1.1.0",
-  "description": "",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
+  "version": "1.0.0",
+  "description": "best image cropper for Ant Design Upload",
+  "main": "dist/antd-img-crop.cjs.js",
+  "module": "dist/antd-img-crop.esm.js",
+  "types": "index.d.ts",
   "files": [
-    "/dist"
+    "dist",
+    "index.d.ts"
   ],
+  "bugs": "https://github.com/sinashahoveisi/antd-cropper-img/issues",
+  "homepage": "https://github.com/sinashahoveisi/antd-cropper-img",
   "repository": {
     "type": "git",
     "directory": "packages/core",
@@ -18,57 +21,55 @@
     "prebuild": "yarn clean",
     "start": "rollup -cw",
     "build": "rollup -c",
-    "clean": "rimraf dist antd-cropper-img-*.tgz",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "clean": "rimraf dist antd-cropper-img-*.tgz"
   },
   "keywords": [
     "react",
-    "drill down",
-    "drilld",
-    "folder structure",
-    "tree structure",
-    "graph structure"
+    "antd",
+    "ant-design",
+    "upload",
+    "image",
+    "crop",
+    "cropper"
   ],
-  "author": "Sina Shahoveisi <shahoveisysina@yahoo.com> (https://sinashahoveisi.github.io)",
+  "author": "Sina Shahoveisi <shahoveisysina@yahoo.com> (https://github.com/sinashahoveisi)",
   "license": "MIT",
   "peerDependencies": {
+    "antd": ">=4.0.0",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
+  "dependencies": {
+    "cropperjs": "^1.5.12",
+    "react-cropper": "^2.1.8"
+  },
+  "eslintIgnore": [
+    "dist",
+    "index.d.ts"
+  ],
   "devDependencies": {
     "@babel/core": "^7.18.5",
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@storybook/addon-actions": "^6.5.9",
-    "@storybook/addon-essentials": "^6.5.9",
-    "@storybook/addon-interactions": "^6.5.9",
-    "@storybook/addon-links": "^6.5.9",
-    "@storybook/builder-webpack5": "^6.5.9",
-    "@storybook/manager-webpack5": "^6.5.9",
-    "@storybook/react": "^6.5.9",
-    "@storybook/testing-library": "^0.0.13",
-    "@types/lodash": "^4.14.182",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@rollup/plugin-typescript": "^8.3.2",
     "@types/node": "^18.0.0",
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.0",
+    "antd": "^4.21.5",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "node-sass": "^7.0.1",
     "postcss": "^8.4.14",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.75.6",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-typescript2": "^0.32.1",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
-    "typescript": "^4.2.4"
-  },
-  "dependencies": {
-    "clsx": "^1.1.1",
-    "deepdash": "^5.3.9",
-    "lodash": "^4.17.21"
+    "tslib": "^2.4.0",
+    "typescript": "^4.6.3"
   }
 }

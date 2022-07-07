@@ -1,16 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39070398-66e2-4b71-b150-02f5a2207f70" name="Changes" comment="" />
+    <list default="true" id="39070398-66e2-4b71-b150-02f5a2207f70" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/projects/package/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/package/src/CropperImage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/package/src/global.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/package/src/styles/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/example/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/example/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/example/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/example/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/projects/example/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/.storybook/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/.storybook/preview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/rollup.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/stories/Advance.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/stories/Mode.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/stories/Simple.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/code-brackets.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/colors.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/comments.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/direction.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/flow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/plugin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/repo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/stackalt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/test/App.test.tsx" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2BJiDhbU9xsdD9PnhA01P1Fv2k0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -19,12 +58,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="app.teamhub.trackedBranches" value="-5s7u92/master" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/projects/package/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="E:\React js\antd-cropper-img\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="E:\React js\antd-cropper-img\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\React js\antd-cropper-img\projects\package\src" />
+      <recent name="E:\React js\antd-cropper-img" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -34,11 +83,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656630480061</updated>
-      <workItem from="1656630496449" duration="182000" />
+      <workItem from="1656630496449" duration="433000" />
+      <workItem from="1656705128437" duration="426000" />
+      <workItem from="1656867606292" duration="7872000" />
+      <workItem from="1656950121688" duration="624000" />
+      <workItem from="1657178966649" duration="23723000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

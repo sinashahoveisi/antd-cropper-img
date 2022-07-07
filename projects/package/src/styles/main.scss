@@ -1,0 +1,19 @@
+@import "~cropperjs/dist/cropper.css";
+
+.antd-cropper-img-modal {
+  .ant-modal-body {
+    .actions-row {
+      margin-top: 1rem;
+      .action-col {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .action-slider {
+          flex: 1;
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+}
