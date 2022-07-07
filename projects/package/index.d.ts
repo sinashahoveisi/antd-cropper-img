@@ -4,10 +4,8 @@ import {ReactCropperProps, ReactCropperElement} from 'react-cropper';
 export interface CropperImageProps {
     ref?: RefObject<ReactCropperElement>;
     aspect?: number;
-    shape?: 'rect' | 'round';
-    grid?: boolean;
-    quality?: number;
     fillColor?: string;
+    cropBoxResizable?: boolean;
 
     hasZoom?: boolean;
     hasRotate?: boolean;

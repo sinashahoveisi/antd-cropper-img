@@ -20,6 +20,7 @@ const CropperImage: ForwardRefRenderFunction<ReactCropperElement, CropperImagePr
 
     hasZoom = true,
     hasRotate = true,
+    cropBoxResizable = true,
     minZoom = 1,
     maxZoom = 3,
 
@@ -180,59 +181,59 @@ const CropperImage: ForwardRefRenderFunction<ReactCropperElement, CropperImagePr
   return (
     <>
       {uploadComponent}
-      {!!image && (
-        <AntModal
-          visible
-          className="antd-cropper-img-modal"
-          title={modalTitle}
-          onOk={onOk}
-          onCancel={onCancel}
-          maskClosable={false}
-          destroyOnClose
-          {...modalProps}>
-          <>
-            <Cropper
-              ref={cropperRef}
-              {...cropperProps}
-              style={{height: '100%', width: '100%'}}
-              src={image}
-              dragMode="move"
-              viewMode={1}
-              minCropBoxHeight={10}
-              minCropBoxWidth={10}
-              background={false}
-              responsive
-              autoCropArea={1}
-              checkOrientation={false}
-              initialAspectRatio={aspect}
-              cropBoxResizable={!aspect}
-            />
-            <AntRow gutter={[16, 32]} className="actions-row">
-              {hasRotate && (
-                <AntCol span={24} className="action-col">
-                  <AntButton onClick={onReduceRotate}>↻</AntButton>
-                  <AntSlider min={-180} max={180} step={1} value={rotate} onChange={onRotate} className="action-slider" />
-                  <AntButton onClick={onIncreaseRotate}>↺</AntButton>
-                </AntCol>
-              )}
-              {hasZoom && (
-                <AntCol span={24} className="action-col">
-                  <AntButton onClick={onReduceZoom}>－</AntButton>
-                  <AntSlider
-                    min={minZoom}
-                    max={maxZoom}
-                    step={0.3}
-                    value={zoom}
-                    onChange={onZoom}
-                    className="action-slider"
-                  />
-                  <AntButton onClick={onIncreaseZoom}>＋</AntButton>
-                </AntCol>
-              )}
-            </AntRow>
-          </>
-        </AntModal>
-      )}
+      <AntModal
+        visible={!!image}
+        centered
+        destroyOnClose
+        className="antd-cropper-img-modal"
+        title={modalTitle}
+        onOk={onOk}
+        onCancel={onCancel}
+        maskClosable={false}
+        {...modalProps}>
+        <>
+          <Cropper
+            ref={cropperRef}
+            {...cropperProps}
+            style={{height: '100%', width: '100%', maxHeight: '55vh', maxWidth: '95vw'}}
+            src={image}
+            dragMode="move"
+            viewMode={1}
+            minCropBoxHeight={10}
+            minCropBoxWidth={10}
+            background={false}
+            responsive
+            autoCropArea={1}
+            checkOrientation={false}
+            initialAspectRatio={aspect}
+            cropBoxResizable={cropBoxResizable}
+            guides
+          />
+          <AntRow gutter={[16, 32]} className="actions-row">
+            {hasRotate && (
+              <AntCol span={24} className="action-col">
+                <AntButton onClick={onReduceRotate}>↻</AntButton>
+                <AntSlider min={-180} max={180} step={1} value={rotate} onChange={onRotate} className="action-slider" />
+                <AntButton onClick={onIncreaseRotate}>↺</AntButton>
+              </AntCol>
+            )}
+            {hasZoom && (
+              <AntCol span={24} className="action-col">
+                <AntButton onClick={onReduceZoom}>－</AntButton>
+                <AntSlider
+                  min={minZoom}
+                  max={maxZoom}
+                  step={0.3}
+                  value={zoom}
+                  onChange={onZoom}
+                  className="action-slider"
+                />
+                <AntButton onClick={onIncreaseZoom}>＋</AntButton>
+              </AntCol>
+            )}
+          </AntRow>
+        </>
+      </AntModal>
     </>
   );
 };

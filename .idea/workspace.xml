@@ -1,32 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39070398-66e2-4b71-b150-02f5a2207f70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/projects/package/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/package/src/CropperImage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/package/src/global.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects/package/src/styles/main.scss" afterDir="false" />
+    <list default="true" id="39070398-66e2-4b71-b150-02f5a2207f70" name="Changes" comment="feature: initial write code CropperImage.tsx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/example/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/example/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/projects/example/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/example/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/projects/example/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/.storybook/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/.storybook/preview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/rollup.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/stories/Advance.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/stories/Mode.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/stories/Simple.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/code-brackets.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/colors.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/comments.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/direction.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/flow.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/plugin.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/repo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/stories/assets/stackalt.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/package/test/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/src/CropperImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/src/CropperImage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,8 +65,16 @@
       <workItem from="1656705128437" duration="426000" />
       <workItem from="1656867606292" duration="7872000" />
       <workItem from="1656950121688" duration="624000" />
-      <workItem from="1657178966649" duration="23723000" />
+      <workItem from="1657178966649" duration="26502000" />
     </task>
+    <task id="LOCAL-00001" summary="feature: initial write code CropperImage.tsx">
+      <created>1657214353993</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657214354006</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,5 +90,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feature: initial write code CropperImage.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: initial write code CropperImage.tsx" />
   </component>
 </project>
