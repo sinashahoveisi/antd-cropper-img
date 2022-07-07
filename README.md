@@ -1,6 +1,6 @@
 # antd-cropper-img
 
-> The best DrillDown for folder or graph or tree structure package for react
+> The best image cropper for [Ant Design Upload]
 
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/sinashahoveisi/antd-cropper-img/master?logo=github&style=plastic)
 ![GitHub issues](https://img.shields.io/github/issues/sinashahoveisi/antd-cropper-img?logo=github&style=plastic)
@@ -10,29 +10,23 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/sinashahoveisi/antd-cropper-img?logo=TypeScript&style=plastic)
 ![GitHub top language](https://img.shields.io/github/languages/top/sinashahoveisi/antd-cropper-img?logo=TypeScript&style=plastic)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/sinashahoveisi/antd-cropper-img?style=plastic)
----
+
 
 ## What is this?
 
-This package is a [React] component that can display graphic, tree or folder structures as a drill-down technique.
-You can call the data simply or using the api and display it to the users.
-Users can now easily analyze unstructured data that is difficult to understand and select their items in an analyzed and comprehensible way.
+This package is a [React] component that can show cropper modal before upload image in ant design.
 
----
 
 ### Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Example](#examples)
-  - [Simple](#simple)
-  - [Advance](#advance)
 - [Demo](#demo)
-- [Documentation](#documentation)
+- [Props](#props)
+  - [Cropper Props](#Cropper Props)
+  - [Modal Props](#Modal Props)
 - [Creator](#creator)
 - [License](#license)
-
----
 
 ## Installation
 You can install this package in two ways simultaneously
@@ -46,105 +40,280 @@ install with [yarn]
 ```sh
 yarn add antd-cropper-img
 ```
----
 
 ## Usage
 
 ```tsx
-import {DrillD} from 'antd-cropper-img';
+import { Upload } from 'antd';
+import CropperImage from 'antd-cropper-img';
+
+const App = () => (
+    <CropperImage>
+        <Upload>+ Add image</Upload>
+    </CropperImage>
+)
 ```
-or
-```tsx
-import DrillD from 'antd-cropper-img';
-```
----
-
-## Examples
-
-### Simple
-
-simple example for show simple folder structure data
-
-![simple]
-
-```tsx
-import React, { Component } from 'react';
-import {DrillD} from 'antd-cropper-img';
-
-function App() {
-  return (
-    <div className="App">
-      <DrillD
-        title="Choose Folder or File"
-        folders={[
-          {
-            name: 'Folder A',
-            children: [{name: 'File A1'}, {name: 'File A2'}, {name: 'Folder AA', children: [{name: 'File AA1'}]}]
-          },
-          {
-            name: 'File 1'
-          },
-          {
-            name: 'Folder B',
-            children: [{name: 'File B1'}, {name: 'File A2'}, {name: 'Folder BB', children: [{name: 'File BB1'}]}]
-          },
-        ]}
-      />
-    </div>
-  );
-}
-```
-### Advance
-
-advance example for show folder structure data with fetch from url
-
-![advance]
-
-```tsx
-import React, { Component } from 'react';
-import {DrillD} from 'antd-cropper-img';
-
-function App() {
-  return (
-    <DrillD
-      title="Choose Category"
-      url="https://api.stlouisfed.org/fred/category/children"
-      mode="multiple"
-      showFullPath
-      isSelectableFolder
-      queryParams={{api_key: 'f8d2c84d4b22cefd6a6e1d5e78128c61', file_type: 'json'}}
-      selectFolderQueryParams={(folder: any) => ({category_id: folder?.id})}
-      fetchedChildrenDataPath={['categories']}
-      folderKey
-    />
-  );
-}
-```
-
----
 
 ## Demo
 
-[A demo is worth a thousand words](https://antd-cropper-img.sinasho.ir/)
+[![Edit antd-img-crop](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antd-img-crop-4qoom5p9x4?fontsize=14&hidenavigation=1&theme=dark)
 
----
+## Props
+props are divided into two groups, `CropperProps` and `ModalProps`
 
-## Documentation
+### Cropper Props
+#### dragMode
 
-Check the [documentation](https://antd-cropper-img.sinasho.ir/) to get you started!
+- Type: `String`
+- Default: `'crop'`
+- Options:
+    - `'crop'`: create a new crop box
+    - `'move'`: move the canvas
+    - `'none'`: do nothing
 
----
+Define the dragging mode of the cropper.
+
+#### initialAspectRatio
+
+- Type: `Number`
+- Default: `NaN`
+
+Define the initial aspect ratio of the crop box. By default, it is the same as the aspect ratio of the canvas (image wrapper).
+
+> Only available when the `aspect` option is set to `NaN`.
+
+#### aspect
+
+- Type: `Number`
+- Default: `NaN`
+
+Define the fixed aspect ratio of the crop box. By default, the crop box has a free ratio.
+
+#### checkCrossOrigin
+
+- Type: `Boolean`
+- Default: `true`
+
+Check if the current image is a cross-origin image.
+
+If so, a `crossOrigin` attribute will be added to the cloned image element, and a timestamp parameter will be added to the `src` attribute to reload the source image to avoid browser cache error.
+
+Adding a `crossOrigin` attribute to the image element will stop adding a timestamp to the image URL and stop reloading the image. But the request (XMLHttpRequest) to read the image data for orientation checking will require a timestamp to bust the cache to avoid browser cache error. You can set the `checkOrientation` option to `false` to cancel this request.
+
+If the value of the image's `crossOrigin` attribute is `"use-credentials"`, then the `withCredentials` attribute will set to `true` when read the image data by XMLHttpRequest.
+
+#### guides
+
+- Type: `Boolean`
+- Default: `true`
+
+Show the dashed lines above the crop box.
+
+#### center
+
+- Type: `Boolean`
+- Default: `true`
+
+Show the center indicator above the crop box.
+
+#### movable
+
+- Type: `Boolean`
+- Default: `true`
+
+Enable to move the image.
+
+#### rotatable
+
+- Type: `Boolean`
+- Default: `true`
+
+Enable to rotate the image.
+
+#### scalable
+
+- Type: `Boolean`
+- Default: `true`
+
+Enable to scale the image.
+
+#### zoomable
+
+- Type: `Boolean`
+- Default: `true`
+
+Enable to zoom the image.
+
+#### minZoom
+
+- Type: `Number`
+- Default: `1`
+
+Minimum zoom factor.
+
+#### maxZoom
+
+- Type: `Number`
+- Default: `3`
+
+Maximum zoom factor.
+
+#### cropBoxResizable
+
+- Type: `Boolean`
+- Default: `true`
+
+Enable to resize the crop box by dragging.
+
+### Modal Props
+
+#### modalTitle
+
+- Type: `String`
+- Default: `'Edit image'`
+
+Title of modal.
+
+#### modalWidth
+
+- Type: `Number` \| `String`
+- Default: `520`
+
+Width of modal in pixels number or percentages.
+
+#### okText
+
+- Type: `String`
+- Default: `'OK'`
+
+Text of modal confirm button.
+
+#### cancelText
+
+- Type: `String`
+- Default: `'Cancel'`
+
+Text of modal cancel button.
+
+#### closable
+
+- Type: `Boolean`
+- Default: `true`
+
+Whether a close (x) button is visible on top right of the modal dialog or not.
+
+#### closeIcon
+
+- Type: `ReactNode`
+- Default: `undefined`
+
+Custom close icon.
+
+
+#### hasMask
+
+- Type: `Boolean`
+- Default: `true`
+
+Whether show mask or not.
+
+#### maskTransitionName
+
+- Type: `String`
+- Default: `'fade'`
+
+MaskTransitionName of modal, use `'none'` to disable the default transition effect.
+
+#### modalTransitionName
+
+- Type: `String`
+- Default: `'fade'`
+
+TransitionName of modal, use `'none'` to disable the default transition effect.
+
+#### wrapClassName
+
+- Type: `String`
+- Default: -
+
+The class name of the container of the modal dialog.
+
+#### onModalOk
+
+- Type: `function`
+- Default: -
+
+Call when click modal confirm button.
+
+#### onModalCancel
+
+- Type: `function`
+- Default: -
+
+Call when click modal mask, top right "x", or cancel button.
+
+#### afterCloseModal
+
+- Type: `function`
+- Default: -
+
+Specify a function that will be called when modal is closed completely.
+
+#### zIndex
+
+- Type: `Number`
+- Default: `1000`
+
+The `z-index` of the Modal.
+
+#### modalStyle
+
+- Type: `CSSProperties`
+- Default: -
+
+Style of floating layer, typically used at least for adjusting the position.
+
+#### maskStyle
+
+- Type: `CSSProperties`
+- Default: -
+
+Style for modal's mask element.
+
+#### bodyStyle
+
+- Type: `CSSProperties`
+- Default: -
+
+Body style for modal body element. Such as height, padding etc.
+
+#### beforeCrop
+
+- Type: `function`
+- Default: -
+
+Call before modal open, if return `false`, it'll not open.
+
+#### onUploadFail
+
+- Type: `function`
+- Default: -
+
+Call when upload failed.
+
+
 
 ## Creator
 
 Sina Shah Oveisi [@sinashahoveisi](https://sinasho.ir)
 
-> I love programming and I am interested in popular frameworks or programming languages and I am currently coding with JavaScript and React framework.
+> I love programming. I am interested in popular frameworks or programming languages and I am currently coding with JavaScript and React framework.
 
----
 
 ## License
-[MIT][license] © [Sina Shahoveisi][author]
+[MIT License][license] © [Sina Shahoveisi][author]
+
+[Ant Design Upload]: https://ant.design/components/upload/
 
 [react]: http://reactjs.org
 
@@ -154,8 +323,4 @@ Sina Shah Oveisi [@sinashahoveisi](https://sinasho.ir)
 
 [author]: https://github.com/sinashahoveisi
 
-[simple]: https://antd-cropper-img.sinasho.ir/assets/simple.gif
-
-[advance]: https://antd-cropper-img.sinasho.ir/assets/advance.gif
-
-[license]: license
+[license]: https://github.com/sinashahoveisi/antd-img-crop/blob/main/LICENSE

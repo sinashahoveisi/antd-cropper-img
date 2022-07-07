@@ -1,5 +1,4 @@
 import type {FC, RefObject, CSSProperties, ReactNode} from 'react';
-import {ReactCropperProps} from 'react-cropper';
 
 export interface CropperImageRefProps {
     setZoom: (amount: number) => void;
@@ -18,7 +17,6 @@ export interface CropperImageProps {
     scalable?: boolean;
     guides?: boolean;
     center?: boolean;
-    movable?: boolean;
     initialAspectRatio?: number;
     minZoom?: number;
     maxZoom?: number;
