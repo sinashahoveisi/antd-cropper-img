@@ -1,29 +1,48 @@
-import type { FC , RefObject} from 'react';
-import {ReactCropperProps, ReactCropperElement} from 'react-cropper';
+import type {FC, RefObject, CSSProperties, ReactNode} from 'react';
+import {ReactCropperProps} from 'react-cropper';
+
+export interface CropperImageRefProps {
+    setZoom: (amount: number) => void;
+    setRotate: (degree: number) => void;
+}
 
 export interface CropperImageProps {
-    ref?: RefObject<ReactCropperElement>;
+    ref?: RefObject<CropperImageRefProps>;
     aspect?: number;
-    fillColor?: string;
     cropBoxResizable?: boolean;
-
-    hasZoom?: boolean;
-    hasRotate?: boolean;
+    checkCrossOrigin?: boolean;
+    dragMode?: 'move' | 'crop' | 'none'
+    zoomable?: boolean;
+    rotatable?: boolean;
+    movable?: boolean;
+    scalable?: boolean;
+    guides?: boolean;
+    center?: boolean;
+    movable?: boolean;
+    initialAspectRatio?: number;
     minZoom?: number;
     maxZoom?: number;
 
     modalTitle?: string;
     modalWidth?: number | string;
-    modalOk?: string;
-    modalCancel?: string;
-    modalMaskTransitionName?: string;
+    okText?: ReactNode;
+    cancelText?: ReactNode;
+    closable?: boolean;
+    hasMask?: boolean;
+    closeIcon?: ReactNode;
+    maskTransitionName?: string;
     modalTransitionName?: string;
+    wrapClassName?: string;
     onModalOk?: (file: void | boolean | string | Blob | File) => void;
+    afterCloseModal?: () => void;
     onModalCancel?: () => void;
+    zIndex?: number;
+    modalStyle?: CSSProperties;
+    maskStyle?: CSSProperties;
+    bodyStyle?: CSSProperties;
 
     beforeCrop?: (file: File, fileList: File[]) => boolean | Promise<boolean>;
     onUploadFail?: (err: Error) => void;
-    cropperProps?: Partial<ReactCropperProps>;
 
     children: JSX.Element;
 }

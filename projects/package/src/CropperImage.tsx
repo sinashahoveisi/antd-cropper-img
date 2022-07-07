@@ -1,4 +1,13 @@
-import {useState, useCallback, useMemo, useRef, forwardRef, ForwardRefRenderFunction, ForwardedRef} from 'react';
+import {
+  useState,
+  useCallback,
+  useMemo,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+  ForwardRefRenderFunction,
+  ForwardedRef
+} from 'react';
 import AntRow from 'antd/es/row';
 import AntCol from 'antd/es/col';
 import AntButton from 'antd/es/button';
@@ -8,37 +17,48 @@ import AntUpload from 'antd/es/upload';
 import type {UploadProps} from 'antd';
 import type {RcFile} from 'antd/lib/upload';
 import {Cropper, ReactCropperElement} from 'react-cropper';
-import type {CropperImageProps} from '../index';
+import type {CropperImageProps, CropperImageRefProps} from '../index';
 import './styles/main.scss';
 
-const CropperImage: ForwardRefRenderFunction<ReactCropperElement, CropperImageProps> = (
+const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageProps> = (
   {
-    ref,
     aspect = 1,
-    quality = 0.4,
-    fillColor = 'white',
-
-    hasZoom = true,
-    hasRotate = true,
+    zoomable = true,
+    rotatable = true,
+    scalable = true,
+    checkCrossOrigin = true,
+    center = true,
+    movable = true,
+    guides = true,
+    dragMode = 'move',
+    initialAspectRatio,
     cropBoxResizable = true,
     minZoom = 1,
     maxZoom = 3,
 
     modalTitle = 'Edit Image',
     modalWidth,
-    modalOk,
-    modalCancel,
-    modalMaskTransitionName,
+    modalStyle,
+    okText,
+    cancelText,
+    maskTransitionName,
     modalTransitionName,
     onModalOk,
     onModalCancel,
+    closeIcon,
+    closable,
+    maskStyle,
+    hasMask,
+    wrapClassName,
+    bodyStyle,
+    afterCloseModal,
+    zIndex,
 
     beforeCrop,
     onUploadFail,
-    cropperProps,
     children
   },
-  forwardedRef: ForwardedRef<ReactCropperElement>
+  forwardedRef: ForwardedRef<CropperImageRefProps>
 ) => {
   const cb = useRef<Pick<CropperImageProps, 'onModalOk' | 'onModalCancel' | 'beforeCrop' | 'onUploadFail'>>({});
   cb.current.onModalOk = onModalOk;
@@ -97,20 +117,6 @@ const CropperImage: ForwardRefRenderFunction<ReactCropperElement, CropperImagePr
     };
   }, [children]);
 
-  const modalProps = useMemo(() => {
-    const obj = {
-      width: modalWidth,
-      okText: modalOk,
-      cancelText: modalCancel,
-      maskTransitionName: modalMaskTransitionName,
-      transitionName: modalTransitionName
-    };
-    Object.keys(obj).forEach((key) => {
-      if (!obj[key]) delete obj[key];
-    });
-    return obj;
-  }, [modalCancel, modalMaskTransitionName, modalOk, modalTransitionName, modalWidth]);
-
   const onClose = () => {
     setImage('');
     setZoom(minZoom);
@@ -160,7 +166,7 @@ const CropperImage: ForwardRefRenderFunction<ReactCropperElement, CropperImagePr
         }
       }
     }
-  }, [fillColor, quality, hasRotate]);
+  }, []);
 
   const onRotate = useCallback((value: number) => {
     cropperRef?.current?.cropper?.rotateTo(value);
@@ -178,6 +184,15 @@ const CropperImage: ForwardRefRenderFunction<ReactCropperElement, CropperImagePr
   const onReduceZoom = useCallback(() => onZoom(zoom - 1), [zoom]);
   const onIncreaseZoom = useCallback(() => onZoom(zoom + 1), [zoom]);
 
+  useImperativeHandle(forwardedRef, () => ({
+    setZoom(amount: number) {
+      onZoom(amount);
+    },
+    setRotate(degree: number) {
+      onRotate(degree);
+    }
+  }));
+
   return (
     <>
       {uploadComponent}
@@ -190,34 +205,55 @@ const CropperImage: ForwardRefRenderFunction<ReactCropperElement, CropperImagePr
         onOk={onOk}
         onCancel={onCancel}
         maskClosable={false}
-        {...modalProps}>
+        width={modalWidth}
+        okText={okText}
+        cancelText={cancelText}
+        maskTransitionName={maskTransitionName}
+        transitionName={modalTransitionName}
+        closable={closable}
+        closeIcon={closeIcon}
+        mask={hasMask}
+        maskStyle={maskStyle}
+        wrapClassName={wrapClassName}
+        bodyStyle={bodyStyle}
+        afterClose={afterCloseModal}
+        zIndex={zIndex}
+        keyboard={false}
+        style={modalStyle}>
         <>
           <Cropper
             ref={cropperRef}
-            {...cropperProps}
             style={{height: '100%', width: '100%', maxHeight: '55vh', maxWidth: '95vw'}}
             src={image}
-            dragMode="move"
+            dragMode={dragMode}
             viewMode={1}
             minCropBoxHeight={10}
             minCropBoxWidth={10}
             background={false}
+            checkCrossOrigin={checkCrossOrigin}
             responsive
             autoCropArea={1}
             checkOrientation={false}
-            initialAspectRatio={aspect}
+            modal={false}
+            aspectRatio={aspect}
+            initialAspectRatio={initialAspectRatio || aspect}
             cropBoxResizable={cropBoxResizable}
-            guides
+            guides={guides}
+            center={center}
+            movable={movable}
+            rotatable={rotatable}
+            scalable={scalable}
+            zoomable={zoomable}
           />
           <AntRow gutter={[16, 32]} className="actions-row">
-            {hasRotate && (
+            {rotatable && (
               <AntCol span={24} className="action-col">
                 <AntButton onClick={onReduceRotate}>↻</AntButton>
                 <AntSlider min={-180} max={180} step={1} value={rotate} onChange={onRotate} className="action-slider" />
                 <AntButton onClick={onIncreaseRotate}>↺</AntButton>
               </AntCol>
             )}
-            {hasZoom && (
+            {zoomable && (
               <AntCol span={24} className="action-col">
                 <AntButton onClick={onReduceZoom}>－</AntButton>
                 <AntSlider
