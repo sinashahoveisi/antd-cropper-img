@@ -325,4 +325,4 @@ Sina Shah Oveisi [@sinashahoveisi](https://sinasho.ir)
 
 [author]: https://github.com/sinashahoveisi
 
-[license]: https://github.com/sinashahoveisi/antd-img-crop/blob/main/LICENSE
+[license]: https://github.com/sinashahoveisi/antd-cropper-img/blob/master/LICENSE
