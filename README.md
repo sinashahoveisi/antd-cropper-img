@@ -23,8 +23,8 @@ This package is a [React] component that can show cropper modal before upload im
 - [Usage](#usage)
 - [Demo](#demo)
 - [Props](#props)
-  - [Cropper Props](#Cropper Props)
-  - [Modal Props](#Modal Props)
+  - [Cropper](#Cropper)
+  - [Modal](#Modal)
 - [Creator](#creator)
 - [License](#license)
 
@@ -61,7 +61,8 @@ const App = () => (
 ## Props
 props are divided into two groups, `CropperProps` and `ModalProps`
 
-### Cropper Props
+### Cropper
+
 #### dragMode
 
 - Type: `String`
@@ -163,7 +164,10 @@ Maximum zoom factor.
 
 Enable to resize the crop box by dragging.
 
-### Modal Props
+---
+
+
+### Modal
 
 #### modalTitle
 
