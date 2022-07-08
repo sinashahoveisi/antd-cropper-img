@@ -48,15 +48,15 @@ import { Upload } from 'antd';
 import CropperImage from 'antd-cropper-img';
 
 const App = () => (
-        <CropperImage>
-          <Upload>+ Add image</Upload>
-        </CropperImage>
+    <CropperImage>
+      <Upload>+ Add image</Upload>
+    </CropperImage>
 )
 ```
 
 ## Demo
 
-[![Edit antd-img-crop](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/antd-img-crop-4qoom5p9x4?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit antd-img-crop](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/i7xvuu?file=/src/App.tsx&fontsize=14&hidenavigation=1&theme=dark)
 
 ## Props
 props are divided into two groups, `CropperProps` and `ModalProps`

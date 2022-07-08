@@ -1,6 +1,6 @@
 {
   "name": "@antd-cropper-img/root",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "The best DrillDown package for react",
   "keywords": [
@@ -28,13 +28,11 @@
     "changed": "lerna changed",
     "start": "lerna run --parallel start",
     "build": "lerna run build --scope antd-cropper-img",
-    "storybook": "lerna run storybook --scope antd-cropper-img",
-    "build-storybook": "lerna run build-storybook --scope antd-cropper-img",
     "clean": "lerna run clean --scope antd-cropper-img",
     "clean:all": "lerna clean",
     "watch": "lerna run watch --scope antd-cropper-img",
     "package": "lerna exec --scope antd-cropper-img -- npm pack",
-    "publish": "lerna exec --scope antd-cropper-img -- npm publish",
+    "publish-one": "lerna exec --scope antd-cropper-img -- npm publish",
     "lint": "eslint ./projects --fix --ext .ts,.tsx,.js,.json",
     "pretty": "prettier --write .",
     "precommit": "npx lint-staged",
