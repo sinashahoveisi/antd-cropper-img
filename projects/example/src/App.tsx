@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <CropperImage initialCrop={{width: 50, height: 50}} cropBoxResizable={false}>
+        <CropperImage>
           <Upload
             name="avatar"
             listType="picture-card"
