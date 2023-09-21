@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39070398-66e2-4b71-b150-02f5a2207f70" name="Changes" comment="fix: add README.md file to package">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_07_08_03_19_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_07_08_03_19__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/example/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/example/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/projects/example/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/src/CropperImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/src/CropperImage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,21 +44,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="app.teamhub.trackedBranches" value="-5s7u92/master" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/projects/package" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="E:\React js\antd-cropper-img\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="ts.external.directory.path" value="E:\React js\antd-cropper-img\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/sina/Programming/React/antd-cropper-img",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/sina/Programming/React/antd-cropper-img/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "/Users/sina/Programming/React/antd-cropper-img/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\React js\antd-cropper-img\projects\package" />
@@ -71,6 +82,7 @@
       <workItem from="1656950121688" duration="624000" />
       <workItem from="1657178966649" duration="39056000" />
       <workItem from="1657283203572" duration="190000" />
+      <workItem from="1695312209602" duration="6589000" />
     </task>
     <task id="LOCAL-00001" summary="feature: initial write code CropperImage.tsx">
       <created>1657214353993</created>

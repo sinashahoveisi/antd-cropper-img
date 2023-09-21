@@ -14,7 +14,7 @@
 
 ## What is this?
 
-This package is a [React] component that can show cropper modal before upload image in ant design.
+This package is a [React] component that can show [Cropperjs] modal before upload image in ant design.
 
 
 ### Table of Contents
@@ -48,9 +48,9 @@ import { Upload } from 'antd';
 import CropperImage from 'antd-cropper-img';
 
 const App = () => (
-    <CropperImage>
+  <CropperImage>
       <Upload>+ Add image</Upload>
-    </CropperImage>
+  </CropperImage>
 )
 ```
 
@@ -90,6 +90,13 @@ Define the initial aspect ratio of the crop box. By default, it is the same as t
 
 Define the fixed aspect ratio of the crop box. By default, the crop box has a free ratio.
 
+### initialCrop
+
+- Type: `initialCropProps`
+- Default: `null`
+
+initialize cropper image
+
 #### checkCrossOrigin
 
 - Type: `Boolean`
@@ -122,6 +129,13 @@ Show the center indicator above the crop box.
 
 Enable to move the image.
 
+### restore
+
+- Type: `Boolean`
+- Default: `true`
+
+Restore the cropped area after resizing the window.
+
 #### rotatable
 
 - Type: `Boolean`
@@ -136,12 +150,40 @@ Enable to rotate the image.
 
 Enable to scale the image.
 
-#### zoomable
+### zoomable
 
 - Type: `Boolean`
 - Default: `true`
 
 Enable to zoom the image.
+
+### zoomOnTouch
+
+- Type: `Boolean`
+- Default: `true`
+
+Enable to zoom the image by dragging touch.
+
+### zoomOnWheel
+
+- Type: `Boolean`
+- Default: `true`
+
+Enable to zoom the image by mouse wheeling.
+
+### wheelZoomRatio
+
+- Type: `Number`
+- Default: `0.1`
+
+Define zoom ratio when zooming the image by mouse wheeling.
+
+### cropBoxMovable
+
+- Type: `Boolean`
+- Default: `true`
+
+Enable to move the crop box by dragging.
 
 #### minZoom
 
@@ -163,6 +205,63 @@ Maximum zoom factor.
 - Default: `true`
 
 Enable to resize the crop box by dragging.
+
+### toggleDragModeOnDblclick
+
+- Type: `Boolean`
+- Default: `true`
+
+Enable to toggle drag mode between `"crop"` and `"move"` when clicking twice on the cropper.
+
+> Requires [`dblclick`](https://developer.mozilla.org/en-US/docs/Web/Events/dblclick) event support.
+
+
+### minContainerWidth
+
+- Type: `Number`
+- Default: `200`
+
+The minimum width of the container.
+
+### minContainerHeight
+
+- Type: `Number`
+- Default: `100`
+
+The minimum height of the container.
+
+### minCanvasWidth
+
+- Type: `Number`
+- Default: `0`
+
+The minimum width of the canvas (image wrapper).
+
+### minCanvasHeight
+
+- Type: `Number`
+- Default: `0`
+
+The minimum height of the canvas (image wrapper).
+
+### minCropBoxWidth
+
+- Type: `Number`
+- Default: `0`
+
+The minimum width of the crop box.
+
+**Note:** This size is relative to the page, not the image.
+
+### minCropBoxHeight
+
+- Type: `Number`
+- Default: `0`
+
+The minimum height of the crop box.
+
+**Note:** This size is relative to the page, not the image.
+
 
 ---
 
@@ -322,6 +421,8 @@ Sina Shah Oveisi [@sinashahoveisi](https://sinasho.ir)
 [npm]: https://docs.npmjs.com/cli/install
 
 [yarn]: https://docs.yarn.com/cli/install
+
+[Cropperjs]: https://github.com/fengyuanchen/cropperjs
 
 [author]: https://github.com/sinashahoveisi
 

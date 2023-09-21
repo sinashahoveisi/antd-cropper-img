@@ -30,11 +30,24 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
     center = true,
     movable = true,
     guides = true,
+    restore,
     dragMode = 'move',
+    toggleDragModeOnDblclick,
     initialAspectRatio,
     cropBoxResizable = true,
+    cropBoxMovable = true,
+    initialCrop,
     minZoom = 1,
     maxZoom = 3,
+    wheelZoomRatio,
+    zoomOnWheel,
+    zoomOnTouch,
+    minCanvasHeight,
+    minCanvasWidth,
+    minContainerHeight,
+    minContainerWidth,
+    minCropBoxHeight = 10,
+    minCropBoxWidth = 10,
 
     modalTitle = 'Edit Image',
     modalWidth,
@@ -176,17 +189,17 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
   const onReduceRotate = useCallback(() => onRotate(rotate - 1), [rotate]);
   const onIncreaseRotate = useCallback(() => onRotate(rotate + 1), [rotate]);
 
-  const onZoom = useCallback((value: number) => {
+  const onZoomTo = useCallback((value: number) => {
     cropperRef?.current?.cropper?.zoomTo(value);
     setZoom(value);
   }, []);
 
-  const onReduceZoom = useCallback(() => onZoom(zoom - 1), [zoom]);
-  const onIncreaseZoom = useCallback(() => onZoom(zoom + 1), [zoom]);
+  const onReduceZoom = useCallback(() => onZoomTo(zoom - 1), [zoom]);
+  const onIncreaseZoom = useCallback(() => onZoomTo(zoom + 1), [zoom]);
 
   useImperativeHandle(forwardedRef, () => ({
     setZoom(amount: number) {
-      onZoom(amount);
+      onZoomTo(amount);
     },
     setRotate(degree: number) {
       onRotate(degree);
@@ -227,10 +240,21 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
             src={image}
             dragMode={dragMode}
             viewMode={1}
-            minCropBoxHeight={10}
-            minCropBoxWidth={10}
+            minCanvasHeight={minCanvasHeight}
+            minCanvasWidth={minCanvasWidth}
+            minCropBoxHeight={minCropBoxHeight}
+            minCropBoxWidth={minCropBoxWidth}
+            minContainerHeight={minContainerHeight}
+            minContainerWidth={minContainerWidth}
+            restore={restore}
+            wheelZoomRatio={wheelZoomRatio}
+            zoomOnWheel={zoomOnWheel}
+            zoomOnTouch={zoomOnTouch}
+            toggleDragModeOnDblclick={toggleDragModeOnDblclick}
+            cropBoxMovable={cropBoxMovable}
             background={false}
             checkCrossOrigin={checkCrossOrigin}
+            data={initialCrop}
             responsive
             autoCropArea={1}
             checkOrientation={false}
@@ -261,7 +285,7 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
                   max={maxZoom}
                   step={0.3}
                   value={zoom}
-                  onChange={onZoom}
+                  onChange={onZoomTo}
                   className="action-slider"
                 />
                 <AntButton onClick={onIncreaseZoom}>＋</AntButton>
