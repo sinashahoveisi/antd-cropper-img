@@ -157,6 +157,18 @@ Enable to scale the image.
 
 Enable to zoom the image.
 
+### zoomAmount
+- Type: `Number`
+- Default: `1`
+
+Amount to zoom on button click.
+
+### zoomStep
+- Type: `Number`
+- Default: `0.3`
+
+Amount to step on zoom slider.
+
 ### zoomOnTouch
 
 - Type: `Boolean`
