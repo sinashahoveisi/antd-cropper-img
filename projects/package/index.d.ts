@@ -27,6 +27,8 @@ export interface CropperImageProps {
     rotatable?: boolean;
     restore?: boolean;
     movable?: boolean;
+    zoomAmount?:number;
+    zoomStep?:number;
     scalable?: boolean;
     guides?: boolean;
     center?: boolean;
