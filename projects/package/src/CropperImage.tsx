@@ -18,6 +18,8 @@ import type {UploadProps} from 'antd';
 import type {RcFile} from 'antd/lib/upload';
 import {Cropper, ReactCropperElement} from 'react-cropper';
 import type {CropperImageProps, CropperImageRefProps} from '../index';
+
+import 'cropperjs/dist/cropper.css';
 import './styles/main.scss';
 
 const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageProps> = (
@@ -37,7 +39,7 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
     cropBoxResizable = true,
     cropBoxMovable = true,
     initialCrop,
-    minZoom = 1,
+    minZoom = 0,
     maxZoom = 3,
     wheelZoomRatio,
     zoomOnWheel,
@@ -191,12 +193,17 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
   const onIncreaseRotate = useCallback(() => onRotate(rotate + 1), [rotate]);
 
   const onZoomTo = useCallback((value: number) => {
+    if (value >= maxZoom) value = maxZoom;
+    else if (value <= minZoom) value = minZoom;
     cropperRef?.current?.cropper?.zoomTo(value);
     setZoom(value);
   }, []);
 
   const onReduceZoom = useCallback(() => onZoomTo(zoom - zoomAmount), [zoom]);
   const onIncreaseZoom = useCallback(() => onZoomTo(zoom + zoomAmount), [zoom]);
+  const onReady = useCallback(() => {
+    if (minZoom) onZoomTo(minZoom);
+  }, []);
 
   useImperativeHandle(forwardedRef, () => ({
     setZoom(amount: number) {
@@ -212,6 +219,7 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
       {uploadComponent}
       <AntModal
         visible={!!image}
+        open={!!image}
         centered
         destroyOnClose
         className="antd-cropper-img-modal"
@@ -241,6 +249,7 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
             src={image}
             dragMode={dragMode}
             viewMode={1}
+            ready={onReady}
             minCanvasHeight={minCanvasHeight}
             minCanvasWidth={minCanvasWidth}
             minCropBoxHeight={minCropBoxHeight}
@@ -280,7 +289,9 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
             )}
             {zoomable && (
               <AntCol span={24} className="action-col">
-                <AntButton disabled={zoom<=minZoom} onClick={onReduceZoom}>－</AntButton>
+                <AntButton disabled={zoom <= minZoom} onClick={onReduceZoom}>
+                  －
+                </AntButton>
                 <AntSlider
                   min={minZoom}
                   max={maxZoom}
@@ -289,7 +300,9 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
                   onChange={onZoomTo}
                   className="action-slider"
                 />
-                <AntButton disabled={zoom >= maxZoom} onClick={onIncreaseZoom}>＋</AntButton>
+                <AntButton disabled={zoom >= maxZoom} onClick={onIncreaseZoom}>
+                  ＋
+                </AntButton>
               </AntCol>
             )}
           </AntRow>

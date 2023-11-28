@@ -200,7 +200,7 @@ Enable to move the crop box by dragging.
 #### minZoom
 
 - Type: `Number`
-- Default: `1`
+- Default: `0`
 
 Minimum zoom factor.
 

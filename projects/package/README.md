@@ -48,9 +48,9 @@ import { Upload } from 'antd';
 import CropperImage from 'antd-cropper-img';
 
 const App = () => (
-  <CropperImage>
-      <Upload>+ Add image</Upload>
-  </CropperImage>
+        <CropperImage>
+          <Upload>+ Add image</Upload>
+        </CropperImage>
 )
 ```
 
@@ -157,6 +157,18 @@ Enable to scale the image.
 
 Enable to zoom the image.
 
+### zoomAmount
+- Type: `Number`
+- Default: `1`
+
+Amount to zoom on button click.
+
+### zoomStep
+- Type: `Number`
+- Default: `0.3`
+
+Amount to step on zoom slider.
+
 ### zoomOnTouch
 
 - Type: `Boolean`
@@ -188,7 +200,7 @@ Enable to move the crop box by dragging.
 #### minZoom
 
 - Type: `Number`
-- Default: `1`
+- Default: `0`
 
 Minimum zoom factor.
 

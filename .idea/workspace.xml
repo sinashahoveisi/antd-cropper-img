@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39070398-66e2-4b71-b150-02f5a2207f70" name="Changes" comment="feat: add some props">
+    <list default="true" id="39070398-66e2-4b71-b150-02f5a2207f70" name="Changes" comment="feat: change example version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/example/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/example/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/projects/example/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/src/CropperImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/src/CropperImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/package/src/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/projects/package/src/styles/main.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +78,9 @@
       <workItem from="1656950121688" duration="624000" />
       <workItem from="1657178966649" duration="39056000" />
       <workItem from="1657283203572" duration="190000" />
-      <workItem from="1695312209602" duration="7379000" />
+      <workItem from="1695312209602" duration="8470000" />
+      <workItem from="1695838459654" duration="655000" />
+      <workItem from="1701197697512" duration="6342000" />
     </task>
     <task id="LOCAL-00001" summary="feature: initial write code CropperImage.tsx">
       <created>1657214353993</created>
@@ -131,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695318960548</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: change example version">
+      <created>1695320315902</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695320315902</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +172,7 @@
     <MESSAGE value="fix: fix README.md file" />
     <MESSAGE value="fix: add README.md file to package" />
     <MESSAGE value="feat: add some props" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add some props" />
+    <MESSAGE value="feat: change example version" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: change example version" />
   </component>
 </project>
