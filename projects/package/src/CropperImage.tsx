@@ -48,7 +48,8 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
     minContainerWidth,
     minCropBoxHeight = 10,
     minCropBoxWidth = 10,
-
+    zoomAmount = 1,
+    zoomStep = 0.3,
     modalTitle = 'Edit Image',
     modalWidth,
     modalStyle,
@@ -194,8 +195,8 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
     setZoom(value);
   }, []);
 
-  const onReduceZoom = useCallback(() => onZoomTo(zoom - 1), [zoom]);
-  const onIncreaseZoom = useCallback(() => onZoomTo(zoom + 1), [zoom]);
+  const onReduceZoom = useCallback(() => onZoomTo(zoom - zoomAmount), [zoom]);
+  const onIncreaseZoom = useCallback(() => onZoomTo(zoom + zoomAmount), [zoom]);
 
   useImperativeHandle(forwardedRef, () => ({
     setZoom(amount: number) {
@@ -279,16 +280,16 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
             )}
             {zoomable && (
               <AntCol span={24} className="action-col">
-                <AntButton onClick={onReduceZoom}>－</AntButton>
+                <AntButton disabled={zoom<=minZoom} onClick={onReduceZoom}>－</AntButton>
                 <AntSlider
                   min={minZoom}
                   max={maxZoom}
-                  step={0.3}
+                  step={zoomStep}
                   value={zoom}
                   onChange={onZoomTo}
                   className="action-slider"
                 />
-                <AntButton onClick={onIncreaseZoom}>＋</AntButton>
+                <AntButton disabled={zoom >= maxZoom} onClick={onIncreaseZoom}>＋</AntButton>
               </AntCol>
             )}
           </AntRow>
