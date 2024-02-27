@@ -1,5 +1,7 @@
 import type {FC, RefObject, CSSProperties, ReactNode} from 'react';
 import type {ReadyEvent, CropStartEvent, CropEndEvent, CropMoveEvent, CropEvent, ZoomEvent} from 'cropperjs'
+import type {ModalProps} from "antd/es/modal/Modal";
+import type {ButtonProps, LegacyButtonType} from "antd/es/button/button";
 
 export interface initialCropProps {
     x?: number;
@@ -56,14 +58,21 @@ export interface CropperImageProps {
     closeIcon?: ReactNode;
     maskTransitionName?: string;
     modalTransitionName?: string;
-    wrapClassName?: string;
+    rootClassName?: string;
+    classNames?: ModalProps['classNames'];
     onModalOk?: (file: void | boolean | string | Blob | File) => void;
     afterCloseModal?: () => void;
     onModalCancel?: () => void;
+    afterOpenChange?: ModalProps['getContainer'];
     zIndex?: number;
-    modalStyle?: CSSProperties;
-    maskStyle?: CSSProperties;
-    bodyStyle?: CSSProperties;
+    modalStyles?: ModalProps['styles'];
+    okType?: LegacyButtonType;
+    cancelButtonProps?: ButtonProps;
+    okButtonProps?: ButtonProps;
+    confirmLoading?: boolean;
+    focusTriggerAfterClose?: boolean;
+    getContainer?: ModalProps['getContainer'];
+    footer?: ModalProps['footer'];
 
     beforeCrop?: (file: File, fileList: File[]) => boolean | Promise<boolean>;
     onUploadFail?: (err: Error) => void;

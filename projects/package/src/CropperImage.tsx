@@ -54,21 +54,28 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
     zoomStep = 0.3,
     modalTitle = 'Edit Image',
     modalWidth,
-    modalStyle,
+    modalStyles,
+    okType,
     okText,
     cancelText,
+    okButtonProps,
+    cancelButtonProps,
+    confirmLoading,
     maskTransitionName,
     modalTransitionName,
     onModalOk,
     onModalCancel,
+    afterOpenChange,
     closeIcon,
     closable,
-    maskStyle,
     hasMask,
-    wrapClassName,
-    bodyStyle,
+    rootClassName,
+    classNames,
     afterCloseModal,
     zIndex,
+    focusTriggerAfterClose,
+    getContainer,
+    footer,
 
     beforeCrop,
     onUploadFail,
@@ -235,13 +242,21 @@ const CropperImage: ForwardRefRenderFunction<CropperImageRefProps, CropperImageP
         closable={closable}
         closeIcon={closeIcon}
         mask={hasMask}
-        maskStyle={maskStyle}
-        wrapClassName={wrapClassName}
-        bodyStyle={bodyStyle}
+        styles={modalStyles}
+        classNames={classNames}
+        rootClassName={rootClassName}
         afterClose={afterCloseModal}
         zIndex={zIndex}
-        keyboard={false}
-        style={modalStyle}>
+        okType={okType}
+        cancelButtonProps={cancelButtonProps}
+        okButtonProps={okButtonProps}
+        confirmLoading={confirmLoading}
+        focusTriggerAfterClose={focusTriggerAfterClose}
+        getContainer={getContainer}
+        footer={footer}
+        afterOpenChange={afterOpenChange}
+        forceRender={false}
+        keyboard={false}>
         <>
           <Cropper
             ref={cropperRef}

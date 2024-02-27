@@ -344,12 +344,19 @@ MaskTransitionName of modal, use `'none'` to disable the default transition effe
 
 TransitionName of modal, use `'none'` to disable the default transition effect.
 
-#### wrapClassName
+#### rootClassName
 
 - Type: `String`
 - Default: -
 
 The class name of the container of the modal dialog.
+
+#### classNames
+
+- Type: `header?: string; body?: string; footer?: string; mask?: string; wrapper?: string;`
+- Default: -
+
+Config Modal build-in module's className.
 
 #### onModalOk
 
@@ -357,6 +364,13 @@ The class name of the container of the modal dialog.
 - Default: -
 
 Call when click modal confirm button.
+
+#### afterCloseModal
+
+- Type: `function`
+- Default: -
+
+Specify a function that will be called when modal is closed completely.
 
 #### onModalCancel
 
@@ -379,26 +393,65 @@ Specify a function that will be called when modal is closed completely.
 
 The `z-index` of the Modal.
 
-#### modalStyle
+#### modalStyles
 
-- Type: `CSSProperties`
+- Type: `header?: CSSProperties; body?: CSSProperties; footer?: CSSProperties; mask?: CSSProperties;`
 - Default: -
 
-Style of floating layer, typically used at least for adjusting the position.
+Config Modal build-in module's style.
 
-#### maskStyle
 
-- Type: `CSSProperties`
+#### okType
+
+- Type: `string`
+- Default: `primary`
+
+Button `type` of the OK button.
+
+
+#### cancelButtonProps
+
+- Type: `ButtonProps`
 - Default: -
 
-Style for modal's mask element.
+The cancel button props.
 
-#### bodyStyle
+#### okButtonProps
 
-- Type: `CSSProperties`
+- Type: `ButtonProps`
 - Default: -
 
-Body style for modal body element. Such as height, padding etc.
+The ok button props.
+
+#### confirmLoading
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to apply loading visual effect for OK button or not.
+
+#### focusTriggerAfterClose
+
+- Type: `boolean`
+- Default: `true`
+
+Whether need to focus trigger element after dialog is closed.
+
+#### getContainer
+
+- Type: `HTMLElement | () => HTMLElement | Selectors | false`
+- Default: `document.body`
+
+The mounted node for Modal but still display at fullscreen.
+
+
+#### footer
+
+- Type: `(params:footerRenderParams)=> React.ReactNode | React.ReactNode`
+- Default: `(OK and Cancel buttons)`
+
+Footer content, set as `footer={null}` when you don't need default buttons.
+
 
 #### beforeCrop
 
