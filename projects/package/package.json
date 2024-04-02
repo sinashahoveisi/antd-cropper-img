@@ -1,6 +1,6 @@
 {
   "name": "antd-cropper-img",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "best image cropper for Ant Design Upload",
   "main": "dist/antd-img-crop.cjs.js",
   "module": "dist/antd-img-crop.esm.js",

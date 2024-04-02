@@ -56,7 +56,7 @@ const App = () => (
 
 ## Demo
 
-[![Edit antd-img-crop](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/i7xvuu?file=/src/App.tsx&fontsize=14&hidenavigation=1&theme=dark)
+[![Edit antd-img-crop](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/antd-cropper-img-example-829n6z?file=%2Fsrc%2FApp.tsx&fontsize=14&hidenavigation=1&theme=dark)
 
 ## Props
 props are divided into two groups, `CropperProps` and `ModalProps`
